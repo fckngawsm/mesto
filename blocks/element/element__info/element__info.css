@@ -1,0 +1,8 @@
+.element__info {
+    max-width: 100%;
+    border-radius: 0 0 10px 10px;
+    position: relative;
+    margin-top: -4px;
+    min-height: 79px;
+    background: white;
+}
