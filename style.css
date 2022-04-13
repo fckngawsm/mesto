@@ -37,7 +37,7 @@
     font-size: 42px;
     line-height: 1.14;
 }
-.edit-button {
+.profile__edit-button {
     width: 24px;
     height: 24px;
     border: 1px solid white;
@@ -46,7 +46,7 @@
     margin-left: 18px;
     cursor: pointer;
 }
-.add-button {
+.profile__add-button {
     width: 150px;
     height: 50px;
     border: 1px solid white;
@@ -58,10 +58,40 @@
 /* elements */
 .elements {
     display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 17px;
     max-width: 880px;
     margin: 0 auto;
 }
 .element {
     max-width: 282px;
     max-height: 361px;
+}
+.element__image {
+    border-radius: 10px 10px 0 0;
+    width: 282px;
+    height: 282px;
+}
+.element__info {
+    border-radius: 0 0 10px 10px;
+    position: relative;
+    margin-top: -4px;
+    min-height: 79px;
+    background: white;
+}
+.element__info-name {
+    margin: 0;
+    padding: 25px 0 0 21px;
+    color: black;
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 1.2;
+}
+.element__like {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    width: 22px;
+    height: 19px;
+    cursor: pointer;
 }
