@@ -5,23 +5,24 @@
 @import url(../blocks/body/body.css);
 /* element */
 @import url(../blocks/element/element.css);
-@import url(../blocks/element/element__image/element__image.css);
-@import url(../blocks/element/element__info-name/element__info-name.css);
-@import url(../blocks/element/element__info/element__info.css);
-@import url(../blocks/element/element__like/element__like.css);
+@import url(../blocks/element/__image/element__image.css);
+@import url(../blocks/element/__info-name/element__info-name.css);
+@import url(../blocks/element/__info/element__info.css);
+@import url(../blocks/element/__like/element__like.css);
 /* elements */
 @import url(../blocks/elements/elements.css);
 /* footer */
 @import url(../blocks/footer/footer.css);
-@import url(../blocks/footer/footer__copyright/footer__copyright.css);
+@import url(../blocks/footer/__copyright/footer__copyright.css);
 /* header */
 @import url(../blocks/header/header.css);
-@import url(../blocks/header/header__logo/header__logo.css);
+@import url(../blocks/header/__logo/header__logo.css);
 /* profile */
 @import url(../blocks/profile/profile.css);
-@import url(../blocks/profile/profile__add-button/profile__add-button.css);
-@import url(../blocks/profile/profile__avatar/profile__avatar.css);
-@import url(../blocks/profile/profile__edit-button/profile__edit-button.css);
-@import url(../blocks/profile/profile__info-name/profile__info-name.css);
-@import url(../blocks/profile/profile__info-status/profile__info-status.css);
-@import url(../blocks/profile/profile__info/profile__info.css);
+@import url(../blocks/profile/__add-button/profile__add-button.css);
+@import url(../blocks/profile/__avatar/profile__avatar.css);
+@import url(../blocks/profile/__coulmn/profile__column.css);
+@import url(../blocks/profile/__edit-button/profile__edit-button.css);
+@import url(../blocks/profile/__info/profile__info.css);
+@import url(../blocks/profile/__name/profile__name.css);
+@import url(../blocks/profile/__status/profile__status.css);
