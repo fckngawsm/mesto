@@ -1,9 +1,11 @@
 .element__like {
-    position: absolute;
-    top: 30px;
-    right: 20px;
-    width: 22px;
     height: 19px;
+    width: 22px;
+    background-image: url(../../../images/like.png);
+    border: none;
+    outline: none;
+    background-color: transparent;
+    background-size: auto;
     cursor: pointer;
     opacity: 1;
     transition: opacity linear .5s;

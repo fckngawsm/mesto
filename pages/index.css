@@ -6,8 +6,9 @@
 /* element */
 @import url(../blocks/element/element.css);
 @import url(../blocks/element/__image/element__image.css);
-@import url(../blocks/element/__info-name/element__info-name.css);
+@import url(../blocks/element/__title/element__title.css);
 @import url(../blocks/element/__info/element__info.css);
+@import url(../blocks/element/__like-container/element__like-container.css);
 @import url(../blocks/element/__like/element__like.css);
 /* elements */
 @import url(../blocks/elements/elements.css);
@@ -26,3 +27,4 @@
 @import url(../blocks/profile/__info/profile__info.css);
 @import url(../blocks/profile/__name/profile__name.css);
 @import url(../blocks/profile/__status/profile__status.css);
+

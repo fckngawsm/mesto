@@ -1,8 +1,10 @@
 .element__info {
-    max-width: 100%;
+    display: flex;
+    background-color: #fff;
+    justify-content: space-between;
     border-radius: 0 0 10px 10px;
-    position: relative;
-    margin-top: -4px;
-    min-height: 79px;
-    background: white;
+    align-items: center;
+    width: 282px;
+    margin-top: 25px;
+    margin-bottom: 31px;
 }
