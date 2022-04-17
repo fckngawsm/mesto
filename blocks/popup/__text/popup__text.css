@@ -1,0 +1,4 @@
+.popup__text:focus {
+    border: none;
+    outline: none;
+}
