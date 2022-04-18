@@ -12,3 +12,7 @@
 
 Картинки были взяты с [сайта](https://unsplash.com/).
 
+**GH-PAGES**
+
+[Ссылка на GitHub Pages](https://fckngawsm.github.io/mesto/)
+
