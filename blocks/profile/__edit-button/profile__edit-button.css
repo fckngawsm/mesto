@@ -15,7 +15,6 @@
     box-sizing: border-box;
     opacity: 1;
     transition: opacity linear .5s;
-    cursor: pointer;
 }
 
 .profile__edit-button:hover {
