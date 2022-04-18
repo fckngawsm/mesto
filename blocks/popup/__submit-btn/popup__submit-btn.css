@@ -12,6 +12,13 @@
     background-color: black;
     color: white;
     cursor: pointer;
+    border-radius: 2px;
+    opacity: 1;
+    transition: opacity linear .5s;
+}
+
+.popup__submit-btn:hover {
+    opacity: .8;
 }
 
 @media screen and (max-width:550px) {
