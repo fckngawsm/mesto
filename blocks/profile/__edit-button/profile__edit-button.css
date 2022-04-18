@@ -1,12 +1,17 @@
 .profile__edit-button {
+    background-image: url(../../../images/pen.png);
+    background-repeat: no-repeat;
+    background-color: transparent;
+    background-size: auto;
+    background-position: center;
+    cursor: pointer;
     height: 24px;
     width: 24px;
+    padding: 0;
     align-self: end;
     margin-bottom: 8px;
     border: 1px solid white;
     outline: none;
-    background-color: transparent;
-    background-size: contain;
     box-sizing: border-box;
     opacity: 1;
     transition: opacity linear .5s;
@@ -24,8 +29,6 @@
         justify-self: center;
 
         margin-bottom: 4px;
-        right: 20px;
-        top: 3px;
         padding: 0;
     }
 }
