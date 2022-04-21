@@ -13,12 +13,10 @@
 
 @media screen and (max-width: 686px) {
     .profile__status {
-    font-style: normal;
-    font-weight: normal;
-    font-size: 14px;
-    line-height: 17px;
-    text-align: center;
-    grid-column-start: 1;
-    grid-column-end: 3;
+        font-weight: normal;
+        font-size: 14px;
+        text-align: center;
+        grid-column-start: 1;
+        grid-column-end: 3;
     }
 }

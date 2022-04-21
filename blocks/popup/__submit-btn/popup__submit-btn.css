@@ -3,7 +3,7 @@
     border: none;
     padding: 14px 125px 18px;
     margin-top: 48px;
-    font-family: 'Inter';
+    font-family: 'Inter', 'Arial', sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 18px;
@@ -25,5 +25,6 @@
     .popup__submit-btn {
         width: 238px;
         padding: 14px 82px;
+        font-size: 14px;
     }
 }

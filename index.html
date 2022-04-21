@@ -26,7 +26,7 @@
                     <h1 class="profile__name">
                         Жак-Ив Кусто
                     </h1>
-                    <button class="profile__edit-button">
+                    <button class="profile__edit-button" type="submit">
 
                     </button>
                     <p class="profile__status">
@@ -34,7 +34,7 @@
                     </p>
                   </div>
                 </div>
-                <button class="profile__add-button">
+                <button class="profile__add-button" type="submit">
                   <img
                     src="./images/plus.png"
                     alt="плюс"
@@ -51,11 +51,9 @@
                         <h2 class="element__title">
                             Будапешт
                         </h2>
-                        <div class="element__like-container">
-                            <button class="element__like">
+                        <button class="element__like" type="submit">
 
-                            </button>
-                        </div>
+                        </button>
                   </div>
                 </div>
                 <div class="element">
@@ -66,11 +64,9 @@
                         <h2 class="element__title">
                             Чикаго
                         </h2>
-                        <div class="element__like-container">
-                            <button class="element__like">
+                        <button class="element__like" type="submit">
 
-                            </button>
-                        </div>
+                        </button>
                   </div>
                 </div>
                 <div class="element">
@@ -81,11 +77,9 @@
                         <h2 class="element__title">
                             Гуанчжоу
                         </h2>
-                        <div class="element__like-container">
-                            <button class="element__like">
+                        <button class="element__like" type="submit">
 
-                            </button>
-                        </div>
+                        </button>
                   </div>
                 </div>
                 <div class="element">
@@ -96,11 +90,9 @@
                         <h2 class="element__title">
                             Энн-Арбор
                         </h2>
-                        <div class="element__like-container">
-                            <button class="element__like">
+                        <button class="element__like" type="submit">
 
-                            </button>
-                        </div>
+                        </button>
                   </div>
                 </div>
                 <div class="element">
@@ -111,11 +103,9 @@
                         <h2 class="element__title">
                             Пиза
                         </h2>
-                        <div class="element__like-container">
-                            <button class="element__like">
+                        <button class="element__like" type="submit">
 
-                            </button>
-                        </div>
+                        </button>
                   </div>
                 </div>
                 <div class="element">
@@ -126,11 +116,9 @@
                         <h2 class="element__title">
                             Санкт-Петербург
                         </h2>
-                        <div class="element__like-container">
-                            <button class="element__like">
+                        <button class="element__like" type="submit">
 
-                            </button>
-                        </div>
+                        </button>
                   </div>
                 </div>
             </section>
@@ -142,26 +130,28 @@
         </footer>
         <div class="popup">
             <div class="popup__content">
-                <button class="popup__close">
+                <button class="popup__close" type="submit">
 
                 </button>
-                <form class="popup__form" >
+                <form class="popup__form" name="form-edit" >
                     <fieldset class="popup__information">
                         <h3 class="popup__title">
                           Редактировать профиль
                         </h3>
                       <input
+                        id="name-input"
                         type="text"
                         placeholder="Ваше имя"
                         name="name"
-                        class="popup__text popup__type-name"
+                        class="popup__text popup__text_type-name"
                         value="Жак-Ив Кусто"
                       />
                       <input
+                        id="job-input"
                         type="text"
                         placeholder="Ваша работа"
                         name="Исследователь океана"
-                        class="popup__text popup__type-status"
+                        class="popup__text popup__text_type-status"
                         value="Исследователь океана"
                         />
                         <button class="popup__submit-btn" type="submit">
