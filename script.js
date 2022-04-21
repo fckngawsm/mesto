@@ -14,7 +14,7 @@ function openPopupAdd(){
 function closePopupRemove(){
     popup.classList.remove('popup_is-opened')
 }
-closePopupButton.addEventListener('click', closePopupRemove);
+
 
 // Функция для отправления формы
 function formSubmitHandler (evt) {
@@ -26,7 +26,7 @@ function formSubmitHandler (evt) {
 
 formElement.addEventListener('submit', formSubmitHandler);
 openPopupButton.addEventListener('click', openPopupAdd);
-
+closePopupButton.addEventListener('click', closePopupRemove);
 
 
 
