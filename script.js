@@ -16,6 +16,7 @@ function closePopupRemove(){
 }
 closePopupButton.addEventListener('click', closePopupRemove);
 
+// Функция для отправления формы
 function formSubmitHandler (evt) {
     evt.preventDefault();
     profileName.textContent = nameInput.value;
