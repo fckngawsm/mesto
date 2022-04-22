@@ -23,22 +23,18 @@
                     class="profile__avatar"
                     />
                   <div class="profile__info">
-                    <h1 class="profile__name">
-                        Жак-Ив Кусто
-                    </h1>
+                    <h1 class="profile__name">Жак-Ив Кусто</h1>
                     <button class="profile__edit-button" type="submit">
 
                     </button>
-                    <p class="profile__status">
-                        Исследователь океана
-                    </p>
+                    <p class="profile__status">Исследователь океана</p>
                   </div>
                 </div>
-                <button class="profile__add-button" type="submit">
+                <button class="profile__add-button" type="button">
                   <img
                     src="./images/plus.svg"
                     alt="плюс"
-                    class="profile__vector"
+                    class="profile__plus"
                     />
                 </button>
             </section>
@@ -51,7 +47,7 @@
                         <h2 class="element__title">
                             Будапешт
                         </h2>
-                        <button class="element__like" type="submit">
+                        <button class="element__like" type="button">
 
                         </button>
                   </div>
@@ -64,7 +60,7 @@
                         <h2 class="element__title">
                             Чикаго
                         </h2>
-                        <button class="element__like" type="submit">
+                        <button class="element__like" type="button">
 
                         </button>
                   </div>
@@ -77,7 +73,7 @@
                         <h2 class="element__title">
                             Гуанчжоу
                         </h2>
-                        <button class="element__like" type="submit">
+                        <button class="element__like" type="button">
 
                         </button>
                   </div>
@@ -90,7 +86,7 @@
                         <h2 class="element__title">
                             Энн-Арбор
                         </h2>
-                        <button class="element__like" type="submit">
+                        <button class="element__like" type="button">
 
                         </button>
                   </div>
@@ -103,7 +99,7 @@
                         <h2 class="element__title">
                             Пиза
                         </h2>
-                        <button class="element__like" type="submit">
+                        <button class="element__like" type="button">
 
                         </button>
                   </div>
@@ -116,7 +112,7 @@
                         <h2 class="element__title">
                             Санкт-Петербург
                         </h2>
-                        <button class="element__like" type="submit">
+                        <button class="element__like" type="button">
 
                         </button>
                   </div>
@@ -130,7 +126,7 @@
         </footer>
         <div class="popup">
             <div class="popup__content">
-                <button class="popup__close" type="submit">
+                <button class="popup__close" type="button">
 
                 </button>
                 <form class="popup__form" name="form-edit" >
@@ -143,16 +139,16 @@
                         type="text"
                         placeholder="Ваше имя"
                         name="name"
-                        class="popup__text popup__text_type-name"
-                        value="Жак-Ив Кусто"
+                        class="popup__text popup__text_type_name"
+                        value=""
                       />
                       <input
                         id="job-input"
                         type="text"
                         placeholder="Ваша работа"
-                        name="ocean explorer"
-                        class="popup__text popup__text_type-status"
-                        value="Исследователь океана"
+                        name="ocean-explorer"
+                        class="popup__text popup__text_type_status"
+                        value=""
                         />
                         <button class="popup__submit-btn" type="submit">
                         Сохранить
@@ -162,6 +158,6 @@
             </div>
         </div>
     </div>
-<script src="script.js"></script>
+<script src="scripts/script.js"></script>
 </body>
 </html>

@@ -1,10 +1,10 @@
 .element__info {
-    display: flex;
-    background-color: #fff;
-    justify-content: space-between;
-    border-radius: 0 0 10px 10px;
     align-items: center;
+    background-color: #fff;
+    border-radius: 0 0 10px 10px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 24px;
+    margin-top: 25px;
     width: 282px;
-    margin-top: 24px;
-    margin-bottom: 31px;
 }
