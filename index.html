@@ -39,84 +39,7 @@
                 </button>
             </section>
             <section class="elements">
-                <div class="element">
-                    <img class="element__image"
-                        src="images/budapest.jpg"
-                        alt="Будапешт">
-                    <div class="element__info">
-                        <h2 class="element__title">
-                            Будапешт
-                        </h2>
-                        <button class="element__like" type="button">
 
-                        </button>
-                  </div>
-                </div>
-                <div class="element">
-                    <img class="element__image"
-                        src="images/architecture.avif"
-                        alt="искусство">
-                    <div class="element__info">
-                        <h2 class="element__title">
-                            Чикаго
-                        </h2>
-                        <button class="element__like" type="button">
-
-                        </button>
-                  </div>
-                </div>
-                <div class="element">
-                    <img class="element__image"
-                        src="images/smoke.avif"
-                        alt="тень">
-                    <div class="element__info">
-                        <h2 class="element__title">
-                            Гуанчжоу
-                        </h2>
-                        <button class="element__like" type="button">
-
-                        </button>
-                  </div>
-                </div>
-                <div class="element">
-                    <img class="element__image"
-                        src="images/lane.avif"
-                        alt="карачаевск">
-                    <div class="element__info">
-                        <h2 class="element__title">
-                            Энн-Арбор
-                        </h2>
-                        <button class="element__like" type="button">
-
-                        </button>
-                  </div>
-                </div>
-                <div class="element">
-                    <img class="element__image"
-                    src="./images/plastik.avif"
-                    alt="пиза">
-                    <div class="element__info">
-                        <h2 class="element__title">
-                            Пиза
-                        </h2>
-                        <button class="element__like" type="button">
-
-                        </button>
-                  </div>
-                </div>
-                <div class="element">
-                    <img class="element__image"
-                        src="images/dvortsovaya.avif"
-                        alt="дворцовая">
-                    <div class="element__info">
-                        <h2 class="element__title">
-                            Санкт-Петербург
-                        </h2>
-                        <button class="element__like" type="button">
-
-                        </button>
-                  </div>
-                </div>
             </section>
         </main>
         <footer class="footer">
@@ -157,7 +80,55 @@
                 </form>
             </div>
         </div>
+        <div class="popup popup-add">
+            <div class="popup__content">
+                <button class="popup__close" type="button">
+
+                </button>
+                <form class="popup-add__form" name="form-edit" >
+                    <fieldset class="popup__information">
+                        <h3 class="popup__title">
+                          Новое место
+                        </h3>
+                      <input
+                        id="name-input"
+                        type="text"
+                        placeholder="Название"
+                        name="name"
+                        class="popup__text popup__text_type_name"
+                        value=""
+                      />
+                      <input
+                        id="source-input"
+                        type="text"
+                        placeholder="Ссылка на картинку"
+                        name="source"
+                        class="popup__text popup__text_type_status"
+                        value=""
+                        />
+                        <button class="popup__submit-btn" type="submit">
+                        Сохранить
+                        </button>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
     </div>
 <script src="scripts/script.js"></script>
+
+<template id="tempalte">
+    <div class="element">
+        <img class="element__image"
+            src=""
+            alt="">
+        <div class="element__info">
+            <h2 class="element__title">
+
+            </h2>
+            <button class="element__like" type="button">
+            </button>
+      </div>
+    </div>
+</template>
 </body>
 </html>
