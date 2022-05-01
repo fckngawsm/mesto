@@ -63,22 +63,30 @@ const handleDeleteCard = (evt) => {
     evt.target.closest('.element').remove();
 }
 
+// Просмотр фотографий
+function openPopupImage(popupImage) {
+    popupImage.classList.add('popup_is-opened');
+}
+function closePopupImage(popupImage) {
+    popupImage.classList.remove('popup_is-opened');
+}
+
 // Работа с добавлением элементов
 
 const initialCards = [
     {
-        name: 'Архыз',
-        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg',
+        name: 'Зандам',
+        link: 'https://images.unsplash.com/photo-1641300817800-5d46fd2aeeb5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80',
         alt: 'Архыз',
     },
     {
-        name: 'Челябинская область',
-        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg',
+        name: 'Берн',
+        link: 'https://images.unsplash.com/photo-1610734287146-94cb52a72718?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80',
         alt: 'Челябинская область',
     },
     {
-      name: 'Иваново',
-      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg',
+      name: 'Вашингтон',
+      link: 'https://images.unsplash.com/photo-1562714529-94d65989df68?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=765&q=80',
       alt: 'Иваново',
     },
     {
@@ -100,19 +108,31 @@ const initialCards = [
 
 generateInititalItem = (initialItem) => {
     const newInitialItem = elementTemplate.cloneNode(true);
-
+    const likeImage = newInitialItem.querySelector('.element__like');
     const titleInitialCards = newInitialItem.querySelector('.element__title');
     const imageInitialCards = newInitialItem.querySelector('.element__image');
+    const deleteCard = newInitialItem.querySelector('.element__delete');
+
+    const popupImage = document.querySelector('.popup-image');
+    const popupImageContent = document.querySelector('.popup-image__photo');
+    const popupImageDescription = document.querySelector('.popup-image__description');
+    const closePopupImage = document.getElementById('popup-image__close');
+
 
     imageInitialCards.src = initialItem.link;
     titleInitialCards.textContent = initialItem.name;
 
-    const likeImage = newInitialItem.querySelector('.element__like');
-
-    likeImage.addEventListener('click' , handleLikeImages)
-
-    const deleteCard = newInitialItem.querySelector('.element__delete')
-    deleteCard.addEventListener('click' , handleDeleteCard)
+    imageInitialCards.addEventListener('click', () => {
+        openPopupImage(popupImage);
+        popupImageContent.src = initialItem.link;
+        popupImageContent.alt = initialItem.name;
+        popupImageDescription.textContent = initialItem.name;
+    });
+    imageInitialCards.addEventListener('click', () => {
+        closePopupImage(popupImage);
+    });
+    likeImage.addEventListener('click' , handleLikeImages);
+    deleteCard.addEventListener('click' , handleDeleteCard);
 
     return newInitialItem;
 }
@@ -134,7 +154,21 @@ formPopupAdd.addEventListener('submit', handlerSubmitAddSourceForm);
 openPopupAddButton.addEventListener('click',openPopupAddPhoto);
 closePopupAddButton.addEventListener('click',closePopupAddPhoto);
 
+//
+// const popupImage = document.querySelector('.popup-image');
+// const elementImage = document.querySelector('.element__image');
+// const closePopupImageButton = popupImage.querySelector('.popup__close');
 
+// function openPopupImage(){
+//     popupImage.classList.add('popup_is-opened');
+// }
+
+// function closePopupImage(){
+//     popupImage.classList.remove('popup_is-opened')
+// }
+
+// elementImage.addEventListener('click', openPopupImage);
+// closePopupImageButton.addEventListener('click', closePopupImage);
 
 
 
