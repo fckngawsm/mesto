@@ -3,8 +3,8 @@ const popup = document.querySelector ('.popup');
 const popupAdd = document.querySelector('.popup-add')
 const openPopupButton = document.querySelector('.profile__edit-button');
 const openPopupAddButton = document.querySelector('.profile__add-button')
-const closePopupButton = popup.querySelector ('.btn__close-edit');
-const closePopupAddButton = popupAdd.querySelector ('.btn__close-add');
+const closePopupButton = popup.querySelector ('.popup__close-edit');
+const closePopupAddButton = popupAdd.querySelector ('.popup__close-add');
 const formElement = popup.querySelector('.popup__form');
 const nameInput = formElement.querySelector('.popup__text_type_name');
 const jobInput = formElement.querySelector('.popup__text_type_status');
@@ -14,22 +14,22 @@ const elements = document.querySelector('.elements');
 const formPopupAdd = document.querySelector('.popup-add__form');
 const inputTitle = document.getElementById('title-input');
 const inputSource = document.getElementById('source-input');
-const buttonCloseImage = document.querySelector('.btn__close-image');
+const buttonCloseImage = document.querySelector('.popup__close-image');
 const popupImage = document.querySelector('.popup-image');
 
 // tempalte
-const elementTemplate = document.querySelector('#template-element').content.querySelector('.element')
+const elementTemplate = document.querySelector('#template-element').content.querySelector('.element');
 
 // функции для открытия и закрытия "попапа"
 function openPopup(popup){
     popup.classList.add('popup_is-opened');
     nameInput.value = profileName.textContent;
     jobInput.value = profileStatus.textContent;
-}
+};
 
 function closePopup(popup){
     popup.classList.remove('popup_is-opened');
-}
+};
 
 
 // Функции для отправления формы
@@ -38,7 +38,7 @@ function formSubmitHandler (evt) {
     profileName.textContent = nameInput.value;
     profileStatus.textContent = jobInput.value;
     closePopup(popup)
-}
+};
 
 const handlerSubmitAddSourceForm = (evt) => {
     evt.preventDefault();
@@ -46,17 +46,17 @@ const handlerSubmitAddSourceForm = (evt) => {
     inputSource.value = '';
     inputTitle.value = '';
     closePopup(popupAdd);
-}
+};
 
 // функции для лайков и удаления карточек
 
 const handleLikeImages = (evt) => {
     evt.target.closest('.element__like').classList.toggle('element__like_active');
-}
+};
 
 const handleDeleteCard = (evt) => {
     evt.target.closest('.element').remove();
-}
+};
 
 // Работа с добавлением элементов
 
@@ -117,10 +117,10 @@ generateInititalItem = (initialItem) => {
     deleteCard.addEventListener('click' , handleDeleteCard);
 
     return newInitialItem;
-}
+};
 
 const addElement = (initialItem) => {
-    elements.prepend(generateInititalItem(initialItem))
+    elements.prepend(generateInititalItem(initialItem));
 };
 
 initialCards.forEach((initialItem) => {
