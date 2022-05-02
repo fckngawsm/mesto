@@ -1,10 +1,10 @@
 // переменные
-const popup = document.querySelector ('.popup');
+const popup = document.getElementById('popup');
 const popupAdd = document.querySelector('.popup-add')
-const openPopupButton = document.querySelector('.profile__edit-button');
-const openPopupAddButton = document.querySelector('.profile__add-button')
-const closePopupButton = popup.querySelector ('.popup__close-edit');
-const closePopupAddButton = popupAdd.querySelector ('.popup__close-add');
+const popupOpenEditButton = document.querySelector('.profile__edit-button');
+const popupOpenAddButton = document.querySelector('.profile__add-button')
+const popupCloseEditButton = popup.querySelector ('.popup__close-edit');
+const popupCloseAddButton = popupAdd.querySelector ('.popup__close-add');
 const formElement = popup.querySelector('.popup__form');
 const nameInput = formElement.querySelector('.popup__text_type_name');
 const jobInput = formElement.querySelector('.popup__text_type_status');
@@ -23,8 +23,6 @@ const elementTemplate = document.querySelector('#template-element').content.quer
 // функции для открытия и закрытия "попапа"
 function openPopup(popup){
     popup.classList.add('popup_is-opened');
-    nameInput.value = profileName.textContent;
-    jobInput.value = profileStatus.textContent;
 };
 
 function closePopup(popup){
@@ -33,14 +31,14 @@ function closePopup(popup){
 
 
 // Функции для отправления формы
-function formSubmitHandler (evt) {
+function submitFormHandler (evt) {
     evt.preventDefault();
     profileName.textContent = nameInput.value;
     profileStatus.textContent = jobInput.value;
     closePopup(popup)
 };
 
-const handlerSubmitAddSourceForm = (evt) => {
+const submitHandlerAddSourceForm = (evt) => {
     evt.preventDefault();
     addElement({link:inputSource.value , name:inputTitle.value});
     inputSource.value = '';
@@ -105,6 +103,7 @@ generateInititalItem = (initialItem) => {
 
     imageInitialCards.src = initialItem.link;
     titleInitialCards.textContent = initialItem.name;
+    imageInitialCards.alt = initialItem.alt;
 
     imageInitialCards.addEventListener('click', () => {
         openPopup(popupImage);
@@ -128,13 +127,17 @@ initialCards.forEach((initialItem) => {
 });
 
 // События
-formElement.addEventListener('submit', formSubmitHandler);
-openPopupButton.addEventListener('click',() => openPopup(popup));
-closePopupButton.addEventListener('click',() => closePopup(popup));
-
-formPopupAdd.addEventListener('submit', handlerSubmitAddSourceForm);
-openPopupAddButton.addEventListener('click', () => openPopup(popupAdd));
-closePopupAddButton.addEventListener('click', () => closePopup(popupAdd));
+formElement.addEventListener('submit', submitFormHandler);
+popupOpenEditButton.addEventListener('click',() => {
+    openPopup(popup);
+    nameInput.value = profileName.textContent;
+    jobInput.value = profileStatus.textContent;
+} );
+popupCloseEditButton.addEventListener('click',() => closePopup(popup));
+//
+formPopupAdd.addEventListener('submit', submitHandlerAddSourceForm);
+popupOpenAddButton.addEventListener('click', () => openPopup(popupAdd));
+popupCloseAddButton.addEventListener('click', () => closePopup(popupAdd));
 
 buttonCloseImage.addEventListener('click', () => closePopup(popupImage));
 
