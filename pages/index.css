@@ -41,10 +41,10 @@
 /* popup-add */
 @import url(../blocks/popup-add/popup-add.css);
 @import url(../blocks/popup-add/__title/popup-add__title.css);
-@import url(../blocks/popup-add/_is-opened/popup-add_is-opened.css);
+/* @import url(../blocks/popup-add/_is-opened/popup-add_is-opened.css); */
 /* popup-image */
 @import url(../blocks/popup-image/popup-image.css);
 @import url(../blocks/popup-image/__content/popup-image__content.css);
 @import url(../blocks/popup-image/__photo/popup-image__photo.css);
 @import url(../blocks/popup-image/__description/popup-image__description.css);
-@import url(../blocks/popup-image/_is-opened/popup_is-opened.css);
+/* @import url(../blocks/popup-image/_is-opened/popup-image_is-opened.css); */
