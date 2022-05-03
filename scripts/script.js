@@ -1,5 +1,5 @@
 // переменные
-const popup = document.getElementById('popup');
+const popup = document.querySelector('.popup_profile');
 const popupAdd = document.querySelector('.popup-add')
 const popupOpenEditButton = document.querySelector('.profile__edit-button');
 const popupOpenAddButton = document.querySelector('.profile__add-button')
