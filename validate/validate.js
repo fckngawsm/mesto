@@ -22,18 +22,31 @@ const validate = (formElement, inputElement, options) => {
 };
 
 // функция для смены кнопки
-const toggleButtonState = (inputList, buttonElement, options) => {
-    if (hasInvalidInput(inputList, options)) {
-      buttonElement.classList.add(options.inactiveButtonClass);
-      buttonElement.disabled = 'disabled';
-    } else {
-      buttonElement.classList.remove(options.inactiveButtonClass);
-      buttonElement.disabled = '';
-    }
-};
+
+function enableSubmitButton (options,buttonSubmit){
+  buttonSubmit.classList.remove(options.inactiveButtonClass);
+  buttonSubmit.disabled = false;
+  console.log('activeButtonSubmit');
+}
+
+function disableSubmitButton (options,buttonSubmit){
+  buttonSubmit.classList.add(options.inactiveButtonClass)
+  buttonSubmit.disabled = true;
+  console.log('disableButtonSubmit');
+}
+
+
+const toggleButtonState = (inputList, buttonSubmit, options) => {
+  console.log('toggleButtonState');
+  if (hasInvalidInput(inputList, options)) {
+    disableSubmitButton (options, buttonSubmit)
+  } else {
+    enableSubmitButton (options, buttonSubmit)
+  }
+}
+
 
 const setEventListeners = (formElement, options) => {
-
     const inputList = Array.from(formElement.querySelectorAll(options.inputSelector));
     const buttonElement = formElement.querySelector(options.submitButtonSelector);
     toggleButtonState(inputList, buttonElement, options);
@@ -66,20 +79,23 @@ const hasInvalidInput = (inputList) => {
     })
 };
 
-// функция для проверки валидации
-// function handleValidate(evt) {
-//     validate(evt.target);
-//     unActivedError(evt.target);
-// }
-
 //
-enableValidation({
+const validationSettings = {
   formSelector: '.popup__form',
   inputSelector: '.popup__text',
   submitButtonSelector: '.popup__submit-btn',
   inactiveButtonClass: 'popup__submit-btn_disabled',
   inputErrorClass: 'popup__input_text_error',
   errorClass: 'popup__error_visibility'
-});
+}
+enableValidation(validationSettings);
 
-
+// const toggleButtonState = (inputList, buttonElement, options) => {
+//   if (hasInvalidInput(inputList, options)) {
+//     buttonElement.classList.add(options.inactiveButtonClass);
+//     buttonElement.disabled = 'disabled';
+//   } else {
+//     buttonElement.classList.remove(options.inactiveButtonClass);
+//     buttonElement.disabled = '';
+//   }
+// }

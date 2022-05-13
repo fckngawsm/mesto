@@ -17,7 +17,6 @@ const inputTitle = document.getElementById('title-input');
 const inputSource = document.getElementById('source-input');
 const buttonCloseImage = document.querySelector('.popup__close-image');
 const popupImage = document.querySelector('.popup-image');
-const buttonElement = document.querySelector('.popup__submit-btn')
 // tempalte
 const elementTemplate = document.querySelector('#template-element').content.querySelector('.element');
 // функции для открытия и закрытия "попапа"
@@ -39,12 +38,12 @@ function closePopupOverlay(evt){
             closePopup(popups[i]);
         }
     }
-    document.removeEventListener('mouseup', closePopupOverlay);
+    // document.removeEventListener('mouseup', closePopupOverlay);
 }
 
-popups.forEach((popupOpen) => {
-    popupOpen.addEventListener('mousedown',handleEscClose)
-})
+// popups.forEach((popupOpen) => {
+//     popupOpen.addEventListener('mousedown',handleEscClose)
+// })
 
 function openPopup(popupProfile){
     popupProfile.classList.add('popup_is-opened');
@@ -153,6 +152,9 @@ initialCards.forEach((initialItem) => {
     addElement(initialItem);
 });
 
+//
+
+
 // События
 formElement.addEventListener('submit', submitFormHandler);
 popupOpenEditButton.addEventListener('click',() => {
@@ -160,11 +162,15 @@ popupOpenEditButton.addEventListener('click',() => {
     nameInput.value = profileName.textContent;
     jobInput.value = profileStatus.textContent;
 });
-
 popupCloseEditButton.addEventListener('click',() => closePopup(popupProfile));
 //
 formPopupAdd.addEventListener('submit', submitHandlerAddSourceForm);
-popupOpenAddButton.addEventListener('click', () => openPopup(popupAdd));
+popupOpenAddButton.addEventListener('click', () => {
+    openPopup(popupAdd);
+    const buttonSubmit = document.querySelector(validationSettings.submitButtonSelector);
+    console.log(validationSettings.submitButtonSelector);
+    disableSubmitButton(validationSettings, buttonSubmit);
+});
 popupCloseAddButton.addEventListener('click', () => closePopup(popupAdd));
 //
 buttonCloseImage.addEventListener('click', () => closePopup(popupImage));
