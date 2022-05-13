@@ -1,11 +1,12 @@
 // переменные
-const popup = document.querySelector('.popup_profile');
+const popupProfile = document.querySelector('.popup_profile');
+const popups = document.querySelectorAll('.popup')
 const popupAdd = document.querySelector('.popup-add')
 const popupOpenEditButton = document.querySelector('.profile__edit-button');
 const popupOpenAddButton = document.querySelector('.profile__add-button')
-const popupCloseEditButton = popup.querySelector ('.popup__close-edit');
+const popupCloseEditButton = popupProfile.querySelector ('.popup__close-edit');
 const popupCloseAddButton = popupAdd.querySelector ('.popup__close-add');
-const formElement = popup.querySelector('.popup__form');
+const formElement = popupProfile.querySelector('.popup__form');
 const nameInput = formElement.querySelector('.popup__text_type_name');
 const jobInput = formElement.querySelector('.popup__text_type_status');
 const profileName = document.querySelector ('.profile__name');
@@ -16,17 +17,43 @@ const inputTitle = document.getElementById('title-input');
 const inputSource = document.getElementById('source-input');
 const buttonCloseImage = document.querySelector('.popup__close-image');
 const popupImage = document.querySelector('.popup-image');
-
+const buttonElement = document.querySelector('.popup__submit-btn')
 // tempalte
 const elementTemplate = document.querySelector('#template-element').content.querySelector('.element');
-
 // функции для открытия и закрытия "попапа"
-function openPopup(popup){
-    popup.classList.add('popup_is-opened');
+
+const handleEscClose = (evt) => {
+    if (evt.key === "Escape"){
+        const popupOpen = document.querySelector('.popup_is-opened');
+        closePopup(popupOpen)
+    }
 };
 
-function closePopup(popup){
-    popup.classList.remove('popup_is-opened');
+popups.forEach((evt) => {
+    evt.addEventListener('mousedown',closePopupOverlay)
+})
+
+function closePopupOverlay(evt){
+    if(evt.target === evt.currentTarget){
+        for (let i = 0;i < popups.length; i ++){
+            closePopup(popups[i]);
+        }
+    }
+    document.removeEventListener('mouseup', closePopupOverlay);
+}
+
+popups.forEach((popupOpen) => {
+    popupOpen.addEventListener('mousedown',handleEscClose)
+})
+
+function openPopup(popupProfile){
+    popupProfile.classList.add('popup_is-opened');
+    document.addEventListener('keydown',handleEscClose);
+};
+
+function closePopup(popupProfile){
+    popupProfile.classList.remove('popup_is-opened');
+    document.removeEventListener('keydown',handleEscClose);
 };
 
 
@@ -35,7 +62,7 @@ function submitFormHandler (evt) {
     evt.preventDefault();
     profileName.textContent = nameInput.value;
     profileStatus.textContent = jobInput.value;
-    closePopup(popup)
+    closePopup(popupProfile)
 };
 
 const submitHandlerAddSourceForm = (evt) => {
@@ -129,16 +156,17 @@ initialCards.forEach((initialItem) => {
 // События
 formElement.addEventListener('submit', submitFormHandler);
 popupOpenEditButton.addEventListener('click',() => {
-    openPopup(popup);
+    openPopup(popupProfile);
     nameInput.value = profileName.textContent;
     jobInput.value = profileStatus.textContent;
-} );
-popupCloseEditButton.addEventListener('click',() => closePopup(popup));
+});
+
+popupCloseEditButton.addEventListener('click',() => closePopup(popupProfile));
 //
 formPopupAdd.addEventListener('submit', submitHandlerAddSourceForm);
 popupOpenAddButton.addEventListener('click', () => openPopup(popupAdd));
 popupCloseAddButton.addEventListener('click', () => closePopup(popupAdd));
-
+//
 buttonCloseImage.addEventListener('click', () => closePopup(popupImage));
 
 
