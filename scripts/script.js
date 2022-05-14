@@ -147,8 +147,6 @@ initialCards.forEach((initialItem) => {
     addElement(initialItem);
 });
 
-//
-
 
 // События
 formElement.addEventListener('submit', submitFormHandler);
