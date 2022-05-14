@@ -32,18 +32,13 @@ popups.forEach((evt) => {
     evt.addEventListener('mousedown',closePopupOverlay)
 })
 
-function closePopupOverlay(evt){
-    if(evt.target === evt.currentTarget){
-        for (let i = 0;i < popups.length; i ++){
-            closePopup(popups[i]);
-        }
-    }
-    // document.removeEventListener('mouseup', closePopupOverlay);
+function closePopupOverlay (evt) {
+    const popupOpen = document.querySelector('.popup_is-opened');
+    if(evt.target === popupOpen){
+        closePopup(popupOpen);
+    };
 }
 
-// popups.forEach((popupOpen) => {
-//     popupOpen.addEventListener('mousedown',handleEscClose)
-// })
 
 function openPopup(popupProfile){
     popupProfile.classList.add('popup_is-opened');
@@ -168,10 +163,11 @@ formPopupAdd.addEventListener('submit', submitHandlerAddSourceForm);
 popupOpenAddButton.addEventListener('click', () => {
     openPopup(popupAdd);
     const buttonSubmit = document.querySelector(validationSettings.submitButtonSelector);
-    console.log(validationSettings.submitButtonSelector);
     disableSubmitButton(validationSettings, buttonSubmit);
 });
-popupCloseAddButton.addEventListener('click', () => closePopup(popupAdd));
+popupCloseAddButton.addEventListener('click', () => {
+    closePopup(popupAdd);
+});
 //
 buttonCloseImage.addEventListener('click', () => closePopup(popupImage));
 

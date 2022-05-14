@@ -26,18 +26,15 @@ const validate = (formElement, inputElement, options) => {
 function enableSubmitButton (options,buttonSubmit){
   buttonSubmit.classList.remove(options.inactiveButtonClass);
   buttonSubmit.disabled = false;
-  console.log('activeButtonSubmit');
 }
 
 function disableSubmitButton (options,buttonSubmit){
   buttonSubmit.classList.add(options.inactiveButtonClass)
   buttonSubmit.disabled = true;
-  console.log('disableButtonSubmit');
 }
 
 
 const toggleButtonState = (inputList, buttonSubmit, options) => {
-  console.log('toggleButtonState');
   if (hasInvalidInput(inputList, options)) {
     disableSubmitButton (options, buttonSubmit)
   } else {
