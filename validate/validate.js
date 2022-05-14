@@ -29,7 +29,7 @@ function enableSubmitButton (options,buttonSubmit){
 }
 
 function disableSubmitButton (options,buttonSubmit){
-  buttonSubmit.classList.add(options.inactiveButtonClass)
+  buttonSubmit.classList.add(options.inactiveButtonClass);
   buttonSubmit.disabled = true;
 }
 
@@ -83,7 +83,7 @@ const validationSettings = {
   submitButtonSelector: '.popup__submit-btn',
   inactiveButtonClass: 'popup__submit-btn_disabled',
   inputErrorClass: 'popup__input_text_error',
-  errorClass: 'popup__error_visibility'
+  errorClass: 'popup__error_visibility',
 }
 enableValidation(validationSettings);
 

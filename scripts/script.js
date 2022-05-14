@@ -122,6 +122,7 @@ generateInititalItem = (initialItem) => {
     const popupImageContent = document.querySelector('.popup-image__photo');
     const popupImageDescription = document.querySelector('.popup-image__description');
 
+
     imageInitialCards.src = initialItem.link;
     titleInitialCards.textContent = initialItem.name;
     imageInitialCards.alt = initialItem.alt;
@@ -160,7 +161,7 @@ popupCloseEditButton.addEventListener('click',() => closePopup(popupProfile));
 formPopupAdd.addEventListener('submit', submitHandlerAddSourceForm);
 popupOpenAddButton.addEventListener('click', () => {
     openPopup(popupAdd);
-    const buttonSubmit = document.querySelector(validationSettings.submitButtonSelector);
+    const buttonSubmit = popupAdd.querySelector(validationSettings.submitButtonSelector);
     disableSubmitButton(validationSettings, buttonSubmit);
 });
 popupCloseAddButton.addEventListener('click', () => {
