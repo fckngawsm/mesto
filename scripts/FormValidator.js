@@ -77,8 +77,8 @@ class FormValidator {
   };
 }
 
-const formPopupEdit = document.querySelector('.popup-edit__form');
-const formPopupAdd = document.querySelector('.popup-add__form');
+const formPopupEdit = document.querySelector('.popup__form-edit');
+const formPopupAdd = document.querySelector('.popup__form-add');
 
 const validatorEditProfile = new FormValidator(validationSettings , formPopupEdit);
 validatorEditProfile.enableValidation();
