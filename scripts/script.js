@@ -69,10 +69,10 @@ const submitHandlerAddSourceForm = (evt) => {
     closePopup(popupAdd);
 };
 //
-// function disableSubmitButton (validationSettings,buttonSubmit){
-//     buttonSubmit.classList.add(validationSettings.inactiveButtonClass);
-//     buttonSubmit.disabled = true;
-// }
+function disableSubmitButton (validationSettings,buttonSubmit){
+    buttonSubmit.classList.add(validationSettings.inactiveButtonClass);
+    buttonSubmit.disabled = true;
+}
 // События
 formElements.addEventListener('submit', submitFormHandler);
 popupOpenEditButton.addEventListener('click',() => {

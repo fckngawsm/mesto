@@ -14,8 +14,9 @@ class FormValidator {
     this._inactiveButtonClass = validationSettings.inactiveButtonClass;
     this._inputErrorClass = validationSettings.inputErrorClass;
     this._errorClass = validationSettings.errorClass;
-    this._inputList = Array.from(formElement.querySelectorAll(validationSettings.inputSelector));
     this._formfield = validationSettings._formSelector;
+
+    this._inputList = Array.from(formElement.querySelectorAll(validationSettings.inputSelector));
   }
 
   _showInputError(input, errorMessage) {
@@ -54,16 +55,6 @@ class FormValidator {
       this._submit.removeAttribute("disabled");
       this._submit.classList.remove(this._inactiveButtonClass);
     }
-  }
-
-  // enableSubmitButton(buttonSubmit){
-  //   buttonSubmit.classList.remove(this._inactiveButtonClass);
-  //   buttonSubmit.disabled = false;
-  // }
-
-  disableSubmitButton(buttonSubmit){
-    buttonSubmit.classList.add(this._inactiveButtonClass);
-    buttonSubmit.disabled = true;
   }
 
   _setEventListeners(){
