@@ -16,7 +16,7 @@
 }
 
 .popup__text:focus {
-    border: none;
+    /* border: none; */
     outline: none;
 }
 

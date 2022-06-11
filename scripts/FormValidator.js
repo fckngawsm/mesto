@@ -1,12 +1,5 @@
-const validationSettings = {
-  formSelector: '.popup__form',
-  inputSelector: '.popup__text',
-  submitButtonSelector: '.popup__submit-btn',
-  inactiveButtonClass: 'popup__submit-btn_disabled',
-  inputErrorClass: 'popup__input_text_error',
-  errorClass: 'popup__error_visibility',
-}
-
+import { validationSettings } from "./script.js";
+// работа с классом
 class FormValidator {
   constructor(validationSettings, formElement) {
     this._form = formElement;
@@ -47,7 +40,7 @@ class FormValidator {
     return this._inputList.some((input) => !input.validity.valid);
   }
 
-  toggleButtonState() {
+  _toggleButtonState() {
     if (this._hasInvalidInput(this._inputList)) {
       this._submit.setAttribute("disabled", true);
       this._submit.classList.add(this._inactiveButtonClass);
@@ -57,33 +50,26 @@ class FormValidator {
     }
   }
 
+  disableSubmitButton(){
+    this._submit.classList.add(this._inactiveButtonClass)
+    this._submit.disbaled = true;
+  }
+
   _setEventListeners(){
     this._inputList.forEach((input) => {
       input.addEventListener('input', () => {
         this._checkInputValidity(input);
-        this.toggleButtonState();
+        this._toggleButtonState();
       });
     });
   }
 
   enableValidation(){
-    this._formList = Array.from(document.querySelectorAll(validationSettings.formSelector));
-    this._formList.forEach((formElement) => {
-      formElement.addEventListener('submit', (evt) => {
-        evt.preventDefault();
-      });
+    this._form.addEventListener('submit', (evt) => {
+      evt.preventDefault();
     });
     this._setEventListeners();
   };
 }
 
-const formPopupEdit = document.querySelector('.popup__form-edit');
-const formPopupAdd = document.querySelector('.popup__form-add');
-
-const validatorEditProfile = new FormValidator(validationSettings , formPopupEdit);
-validatorEditProfile.enableValidation();
-
-const validatorAddCard = new FormValidator(validationSettings, formPopupAdd);
-validatorAddCard.enableValidation();
-
-export {validatorAddCard , validatorEditProfile , validationSettings , FormValidator ,formPopupEdit , formPopupAdd}
+export {FormValidator}

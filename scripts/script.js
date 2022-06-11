@@ -1,7 +1,11 @@
+// импорт
+import {FormValidator} from "./FormValidator.js";
+import { Card } from "./Сard.js";
+import { initialCards } from "./initialCards.js";
 // переменные
 const popupProfile = document.querySelector('.popup_profile');
 const popups = document.querySelectorAll('.popup')
-const popupAdd = document.querySelector('.popup-add')
+const popupAdd = document.querySelector('.popup_type_add')
 const popupOpenEditButton = document.querySelector('.profile__edit-button');
 const popupOpenAddButton = document.querySelector('.profile__add-button')
 const popupCloseEditButton = popupProfile.querySelector ('.popup__close-edit');
@@ -11,11 +15,47 @@ const nameInput = formElements.querySelector('.popup__text_type_name');
 const jobInput = formElements.querySelector('.popup__text_type_status');
 const profileName = document.querySelector ('.profile__name');
 const profileStatus = document.querySelector('.profile__status');
-const elements = document.querySelector('.elements');
+const cardElements = document.querySelector('.elements');
 const inputTitle = document.getElementById('title-input');
 const inputSource = document.getElementById('source-input');
 const buttonCloseImage = document.querySelector('.popup__close-image');
 const popupImage = document.querySelector('.popup-image');
+const formPopupEdit = document.querySelector('.popup__form-edit');
+const formPopupAdd = document.querySelector('.popup__form-add');
+export const _popupImageContent = document.querySelector('.popup-image__photo');
+export const _popupImageDescription = document.querySelector('.popup-image__description');
+// объект настроек
+export const validationSettings = {
+    formSelector: '.popup__form',
+    inputSelector: '.popup__text',
+    submitButtonSelector: '.popup__submit-btn',
+    inactiveButtonClass: 'popup__submit-btn_disabled',
+    inputErrorClass: 'popup__input_text_error',
+    errorClass: 'popup__error_visibility',
+}
+// Экземпляры класса
+// валдиация
+const validatorEditProfile = new FormValidator(validationSettings , formPopupEdit);
+validatorEditProfile.enableValidation();
+
+const validatorAddCard = new FormValidator(validationSettings, formPopupAdd);
+validatorAddCard.enableValidation();
+// класса
+function createCard(initialItem) {
+    const card = new Card (initialItem, '.template-element');
+    const cardElement = card.generateInititalItem()
+
+    return cardElement
+}
+
+function renderCard(initialItem) {
+    const element = createCard(initialItem);
+    cardElements.prepend(element);
+}
+
+initialCards.forEach(initialItem => {
+    renderCard(initialItem);
+});
 
 // функции для открытия и закрытия "попапа"
 
@@ -52,6 +92,7 @@ function closePopup(popupProfile){
 };
 
 
+
 // Функции для отправления формы
 function submitFormHandler (evt) {
     evt.preventDefault();
@@ -62,31 +103,26 @@ function submitFormHandler (evt) {
 
 const submitHandlerAddSourceForm = (evt) => {
     evt.preventDefault();
-
-    addElement({link:inputSource.value , name:inputTitle.value});
+    renderCard({link:inputSource.value , name:inputTitle.value});
     inputSource.value = '';
     inputTitle.value = '';
     closePopup(popupAdd);
+
 };
-//
-function disableSubmitButton (validationSettings,buttonSubmit){
-    buttonSubmit.classList.add(validationSettings.inactiveButtonClass);
-    buttonSubmit.disabled = true;
-}
+;
 // События
 formElements.addEventListener('submit', submitFormHandler);
 popupOpenEditButton.addEventListener('click',() => {
-    openPopup(popupProfile);
     nameInput.value = profileName.textContent;
     jobInput.value = profileStatus.textContent;
+    openPopup(popupProfile);
 });
 popupCloseEditButton.addEventListener('click',() => closePopup(popupProfile));
 //
 formPopupAdd.addEventListener('submit', submitHandlerAddSourceForm);
 popupOpenAddButton.addEventListener('click', () => {
     openPopup(popupAdd);
-    const buttonSubmit = popupAdd.querySelector(validationSettings.submitButtonSelector);
-    disableSubmitButton(validationSettings, buttonSubmit);
+    validatorAddCard.disableSubmitButton()
 });
 popupCloseAddButton.addEventListener('click', () => {
     closePopup(popupAdd);
@@ -94,8 +130,8 @@ popupCloseAddButton.addEventListener('click', () => {
 //
 buttonCloseImage.addEventListener('click', () => closePopup(popupImage));
 
-import {validatorAddCard , validatorEditProfile , validationSettings , FormValidator , formPopupAdd} from "./FormValidator.js";
-import { Card , initialCards , addElement} from "./Сard.js";
+
+
 
 
 
