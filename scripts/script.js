@@ -22,8 +22,8 @@ const buttonCloseImage = document.querySelector('.popup__close-image');
 const popupImage = document.querySelector('.popup_type_image');
 const formPopupEdit = document.querySelector('.popup__form-edit');
 const formPopupAdd = document.querySelector('.popup__form-add');
-export const popupImageContent = document.querySelector('.popup-image__photo');
-export const popupImageDescription = document.querySelector('.popup-image__description');
+export const popupImageContent = document.querySelector('.popup__photo-image');
+export const popupImageDescription = document.querySelector('.popup__description-image');
 // объект настроек
 export const validationSettings = {
     formSelector: '.popup__form',
