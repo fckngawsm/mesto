@@ -3,7 +3,7 @@ import {FormValidator} from "./FormValidator.js";
 import { Card } from "./Сard.js";
 import { initialCards } from "./initialCards.js";
 // переменные
-const popupProfile = document.querySelector('.popup_profile');
+const popupProfile = document.querySelector('.popup_type_profile');
 const popups = document.querySelectorAll('.popup')
 const popupAdd = document.querySelector('.popup_type_add')
 const popupOpenEditButton = document.querySelector('.profile__edit-button');
@@ -19,11 +19,11 @@ const cardElements = document.querySelector('.elements');
 const inputTitle = document.getElementById('title-input');
 const inputSource = document.getElementById('source-input');
 const buttonCloseImage = document.querySelector('.popup__close-image');
-const popupImage = document.querySelector('.popup-image');
+const popupImage = document.querySelector('.popup_type_image');
 const formPopupEdit = document.querySelector('.popup__form-edit');
 const formPopupAdd = document.querySelector('.popup__form-add');
-export const _popupImageContent = document.querySelector('.popup-image__photo');
-export const _popupImageDescription = document.querySelector('.popup-image__description');
+export const popupImageContent = document.querySelector('.popup-image__photo');
+export const popupImageDescription = document.querySelector('.popup-image__description');
 // объект настроек
 export const validationSettings = {
     formSelector: '.popup__form',
@@ -43,9 +43,9 @@ validatorAddCard.enableValidation();
 // класса
 function createCard(initialItem) {
     const card = new Card (initialItem, '.template-element');
-    const cardElement = card.generateInititalItem()
+    const cardElement = card.generateInititalItem();
 
-    return cardElement
+    return cardElement;
 }
 
 function renderCard(initialItem) {
@@ -129,14 +129,4 @@ popupCloseAddButton.addEventListener('click', () => {
 });
 //
 buttonCloseImage.addEventListener('click', () => closePopup(popupImage));
-
-
-
-
-
-
-
-
-
-
 
