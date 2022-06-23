@@ -2,15 +2,17 @@ import { initialCards } from "./initialCards.js";
 import {
   popupImageContent,
   popupImageDescription,
-  handleCardClick,
 } from "./script.js";
+import { createCard } from "./script.js";
 // Работа с классом
-export class Card {
-  constructor(data, cardSelector) {
+export default class Card {
+  constructor({data , handleCardClick}, cardSelector ) {
+    this._data = data;
     this._name = data.name;
     this._link = data.link;
     this._alt = data.alt;
     this._cardSelector = cardSelector;
+    this._handleCardClick = handleCardClick;
   }
 
   // template
@@ -42,9 +44,7 @@ export class Card {
       this._handleDeleteCard(evt);
     });
     this._cardImage.addEventListener("click", () => {
-      popupImageContent.src = this._link;
-      popupImageDescription.textContent = this._name;
-      handleCardClick();
+      this._handleCardClick(this._name , this._link);
     });
   }
   // карточки
