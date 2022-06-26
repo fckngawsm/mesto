@@ -1,4 +1,4 @@
-import { validationSettings } from "./script.js";
+import { validationSettings } from "../pages/script.js";
 // работа с классом
 class FormValidator {
   constructor(validationSettings, formElement) {
