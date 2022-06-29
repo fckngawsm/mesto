@@ -1,4 +1,5 @@
 // импорт
+import "./index.css";
 import {FormValidator} from "../compontents/FormValidator.js";
 import Card from "../compontents/Сard.js";
 import { initialCards } from "../compontents/initialCards.js";
