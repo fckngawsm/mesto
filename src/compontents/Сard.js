@@ -1,9 +1,3 @@
-import { initialCards } from "./initialCards.js";
-import {
-  popupImageContent,
-  popupImageDescription,
-} from "../pages/index.js";
-import { createCard } from "../pages/index.js";
 // Работа с классом
 export default class Card {
   constructor({data , handleCardClick}, cardSelector ) {

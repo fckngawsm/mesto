@@ -2,39 +2,32 @@
 import "./index.css";
 import {FormValidator} from "../compontents/FormValidator.js";
 import Card from "../compontents/Сard.js";
-import { initialCards } from "../compontents/initialCards.js";
 import Section from "../compontents/Section.js";
 import Popup from "../compontents/Popup.js";
 import PopupWithImage from "../compontents/PopupWithImage.js";
 import PopupWithForm from "../compontents/PopupWithForm.js";
 import UserInfo from "../compontents/UserInfo.js";
-// переменные
-const popupProfile = document.querySelector('.popup_type_profile');
-const popupAdd = document.querySelector('.popup_type_add')
-const popupOpenEditButton = document.querySelector('.profile__edit-button');
-const popupOpenAddButton = document.querySelector('.profile__add-button')
-const popupCloseEditButton = popupProfile.querySelector ('.popup__close-edit');
-const popupCloseAddButton = popupAdd.querySelector ('.popup__close-add');
-const formElements = popupProfile.querySelector('.popup__form');
-const nameInput = formElements.querySelector('.popup__text_type_name');
-const jobInput = formElements.querySelector('.popup__text_type_status');
-const inputTitle = document.getElementById('title-input');
-const inputSource = document.getElementById('source-input');
-const buttonCloseImage = document.querySelector('.popup__close-image');
-const formPopupEdit = document.querySelector('.popup__form-edit');
-const formPopupAdd = document.querySelector('.popup__form-add');
-export const popupImageContent = document.querySelector('.popup__photo-image');
-export const popupImageDescription = document.querySelector('.popup__description-image');
-export const openedClass = document.querySelector('.popup_is-opened');
-// объект настроек
-export const validationSettings = {
-    formSelector: '.popup__form',
-    inputSelector: '.popup__text',
-    submitButtonSelector: '.popup__submit-btn',
-    inactiveButtonClass: 'popup__submit-btn_disabled',
-    inputErrorClass: 'popup__input_text_error',
-    errorClass: 'popup__error_visibility',
-}
+import {
+  popupProfile,
+  popupAdd,
+  popupOpenEditButton,
+  popupOpenAddButton,
+  popupCloseEditButton,
+  popupCloseAddButton,
+  formElements,
+  nameInput,
+  jobInput,
+  inputTitle,
+  inputSource,
+  buttonCloseImage,
+  formPopupAdd,
+  formPopupEdit,
+  popupImageContent,
+  popupImageDescription,
+  openedClass,
+  validationSettings,
+  initialCards
+} from "../utils/constants";
 // Экземпляры класса
 // валдиация
 const validatorEditProfile = new FormValidator(validationSettings , formPopupEdit);
@@ -95,8 +88,8 @@ popupEditProfile.setEventListeners()
 const popupAddImage = new PopupWithForm(
   '.popup_type_add',
   {
-    submit: () => {
-      renderCard({name:inputTitle.value , link:inputSource.value});
+    submit: (obj) => {
+      renderCard({name: obj['title'] , link: obj['source']});
       popupAddImage.close();
     },
   }
