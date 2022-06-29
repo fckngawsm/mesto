@@ -3,6 +3,8 @@
 @import url(../vendor/fonts/inter.css);
 @import url(../blocks/page/page.css);
 @import url(../blocks/body/body.css);
+/* main */
+@import url(../blocks/main/main.css);
 /* element */
 @import url(../blocks/element/element.css);
 @import url(../blocks/element/__image/element__image.css);
