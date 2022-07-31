@@ -88,7 +88,7 @@ validatorChangeAvatar.enableValidation();
 // экземпляр для попапа с картинкой
 const imageOpen = new PopupWithImage(".popup_type_image");
 imageOpen.setEventListeners();
-
+// экземпляр для попапа с подтверждением
 const popupConfirmDelete = new PopupWithSubmit(".popup_type_delete");
 popupConfirmDelete.setEventListeners();
 // создание карточки

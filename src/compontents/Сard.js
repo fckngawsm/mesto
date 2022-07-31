@@ -10,7 +10,6 @@ export default class Card {
     this._name = data.name;
     this._link = data.link;
 
-
     this._likes = data.likes;
     this._ownerId = data.owner._id;
     this._id = data._id;
@@ -93,7 +92,7 @@ export default class Card {
 
     this._cardImage.src = this._link;
     this._elementTitle.textContent = this._name;
-    this._cardImage.alt  = this._name;
+    this._cardImage.alt = this._name;
 
     this._setEventListeners();
     this.setLike(this._likes);
