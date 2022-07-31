@@ -30,9 +30,9 @@
 
 **Как запустить?**
 
-git clone git@github.com:fckngawsm/mesto.git
-cd mesto
-npm i webpack --save-dev
-npm run build
-npm run dev
+* git clone git@github.com:fckngawsm/mesto.git
+* cd mesto
+* npm i webpack --save-dev
+* npm run build
+* npm run dev
 
