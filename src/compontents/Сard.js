@@ -1,3 +1,5 @@
+import { data } from "autoprefixer";
+
 export default class Card {
   constructor(
     cardSelector,
@@ -7,7 +9,7 @@ export default class Card {
     this._data = data;
     this._name = data.name;
     this._link = data.link;
-    this._alt = data.alt;
+
 
     this._likes = data.likes;
     this._ownerId = data.owner._id;
@@ -68,7 +70,6 @@ export default class Card {
   _setEventListeners() {
     this._likeImage.addEventListener("click", () => {
       this._handleLikeImage();
-      console.log(this._like);
     });
 
     this._deleteImage.addEventListener("click", () => {
@@ -92,7 +93,7 @@ export default class Card {
 
     this._cardImage.src = this._link;
     this._elementTitle.textContent = this._name;
-    this._cardImage.alt = this._alt;
+    this._cardImage.alt  = this._name;
 
     this._setEventListeners();
     this.setLike(this._likes);
