@@ -33,7 +33,7 @@
 @import url(../blocks/profile/__name/profile__name.css);
 @import url(../blocks/profile/__status/profile__status.css);
 @import url(../blocks/profile/__plus/profile__plus.css);
-@import url(../blocks/profile/__edit-button/_avatar/profile__edit_avatar.css);
+@import url(../blocks/profile/__edit-button/_avatar/profile__edit-avatar.css);
 /* popup */
 @import url(../blocks/popup/popup.css);
 @import url(../blocks/popup/__close/popup__close.css);
