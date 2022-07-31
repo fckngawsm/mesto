@@ -1,4 +1,4 @@
-.profile__edit-button_avatar {
+.profile__edit_avatar {
     background: #000000 url(../../../../images/images_avatar.svg) no-repeat center;
     width: 120px;
     height: 120px;
@@ -11,19 +11,19 @@
     outline-style: none;
 }
 
-.profile__edit-button_avatar:hover {
+.profile__edit_avatar:hover {
     opacity: 0.8;
     cursor: pointer;
 }
 
 @media (max-width: 768px) {
-    .profile__edit-button_avatar {
+    .profile__edit_avatar {
         margin-bottom: 26px;
     }
 }
 
 @media (max-width: 620px) {
-    .profile__edit-button_avatar {
+    .profile__edit_avatar {
         margin-right: 0;
     }
 }
